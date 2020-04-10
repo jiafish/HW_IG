@@ -17,7 +17,7 @@ const MessengeList=({ meg })=>{
           <Text style={styles.messengeFont}>{meg.activeMessage}</Text>
         </View>
       </View>
-      <Image source={{uri: CameraIconUrl }} style={styles.Icon}/>
+      <Image source={{uri: CameraIconUrl }} style={[styles.Icon, styles.Opaticy]}/>
     </View>
   );
 };
@@ -49,6 +49,9 @@ const styles=StyleSheet.create({
   messengeFont: {
     fontSize: 12,
     color: '#c7c7c7'
+  },
+  Opaticy: {
+    opacity: 0.8
   }
 });
 

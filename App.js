@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 
 import Postscreen from './src/screen/postsceen';
 import Messengescreen from './src/screen/messengeScreen';
@@ -9,8 +9,8 @@ import Messengescreen from './src/screen/messengeScreen';
 const MessergeIcon = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Message.png';
 const CameraIconUrl = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Camera.png';
 const LogoIconUrl = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Instagram.png';
-const Flim = '';
-const Edit = '';
+const Film = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/film.png';
+const Edit = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/edit.png';
 
 const Stack = createStackNavigator();
 const Stackref = React.createRef();
@@ -40,8 +40,10 @@ const Stackref = React.createRef();
             headerStyle:{backgroundColor:"#F7F7F7"},
             headerRight: () => {
               return(
-                <Image source={{uri: Film}} style={styles.CameraIcon}/>,
-                <Image source={{uri: Edit}} style={styles.CameraIcon}/>,
+                <View style={styles.row}>
+                    <Image source={{uri: Film}} style={styles.Icon}/>
+                    <Image source={{uri: Edit}} style={styles.CameraIcon}/>
+                </View>
               )
             } 
           }}
@@ -75,9 +77,17 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     marginRight: 16
   },
+  Icon: {
+    width: 30,
+    height: 24
+  },
   Logo: {
     height: 24,
     width: 80
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center'
   }
 });
 
