@@ -1,19 +1,76 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 
-export default function App() {
+import Postscreen from './src/screen/postsceen';
+import Messengescreen from './src/screen/messengeScreen';
+const MessergeIcon = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Message.png';
+const CameraIconUrl = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Camera.png';
+const LogoIconUrl = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Instagram.png';
+
+const Stack = createStackNavigator();
+const Stackref = React.createRef();
+
+ const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <NavigationContainer ref={Stackref}>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Postscreen}
+         options={{
+          headerLeft: () => <Image source={{uri: CameraIconUrl}} style={styles.CameraIcon}/>,
+          headerTitle: () => <Image source={{uri: LogoIconUrl}} style={styles.Logo}/>,
+          headerRight: () => {
+            return(
+              <TouchableOpacity
+                onPress={() => Stackref.current?.navigate('Meg')}>
+                  <Image source={{uri: MessergeIcon}} style={styles.CameraIcon} />
+              </TouchableOpacity>
+            )
+          },
+          headerStyle:{backgroundColor:"#F7F7F7"},
+        }}
+         />
+        <Stack.Screen name="Meg" component={Messengescreen} 
+          options={{
+            title: 'jia_0623_jia',
+            headerStyle:{backgroundColor:"#F7F7F7"},
+            headerRight: () => <Image source={{uri: CameraIconUrl}} style={styles.CameraIcon}/>,
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  headerStyle: {
+    flexDirection: 'row',
+    backgroundColor: "#F8F8F8",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: 90,
+    paddingTop: 30,
+    paddingHorizontal: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    elevation: 2
   },
+  leftStyle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  CameraIcon: {
+    width: 24,
+    height: 24,
+    marginLeft: 16,
+    marginRight: 16
+  },
+  Logo: {
+    height: 24,
+    width: 80
+  }
 });
+
+export default App;
