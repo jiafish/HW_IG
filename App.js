@@ -8,7 +8,7 @@ import Messengescreen from './src/screen/messengeScreen';
 
 const MessergeIcon = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Message.png';
 const CameraIconUrl = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Camera.png';
-const LogoIconUrl = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Instagram.png';
+const LogoIconUrl = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Logo.png';
 const Film = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/film.png';
 const Edit = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/edit.png';
 
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     height: 24
   },
   Logo: {
-    height: 24,
+    height: 30,
     width: 80
   },
   row: {
