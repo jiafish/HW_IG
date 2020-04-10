@@ -26,18 +26,20 @@ const styles=StyleSheet.create({
   BodyContainStyle: {
     flexDirection: 'row',
     width: screenWidth,
-    height: 62,
+    height: 70,
     paddingHorizontal: 16,
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginTop: 8
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center'
   },
   headStyle: {
-    height: 22,
-    width: 22
+    height: 60,
+    width: 60,
+    marginRight: 16
   },
   Icon: {
     width: 24,

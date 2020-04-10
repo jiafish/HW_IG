@@ -7,7 +7,7 @@ const screenHeight = Math.round(Dimensions.get('window').height);
 const MessergeIcon = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Message.png';
 const TagIcon = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/Tag.png';
 const CommentIcon = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/comment.png';
-const LikeIcon = '';
+const LikeIcon = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/baseline_favorite_border_black_18dp.png';
 const MoreIcon = 'https://raw.githubusercontent.com/jiafish/HW_IG/master/assets/icon/outline_more_vert_black_24dp.png';
 
 const PostList =({ post }) =>{
@@ -32,7 +32,7 @@ const PostList =({ post }) =>{
                     }}/>
             <View style={styles.userContainerStyle }>
                 <View style= {styles.row}> 
-                    <Image source={{uri: LikeIcon}} style={styles.LikeIconIcon} />
+                    <Image source={{uri: LikeIcon}} style={styles.LikeIcon} />
                     <Image source={{uri: CommentIcon}} style={styles.Icon}/>
                     <Image source={{uri: MessergeIcon}} style={styles.Icon}/>
                 </View>
@@ -88,8 +88,8 @@ const styles = StyleSheet.create({
         marginLeft: 16
     },
     LikeIcon: {
-            height: 24,
-            width: 24
+            height: 26,
+            width: 26
     },
     likeText: {
         paddingLeft: 16,
